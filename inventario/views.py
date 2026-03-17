@@ -11,7 +11,6 @@ def categorias(request):
 
     categorias_qs = Categoria.objects.all().order_by('nombre')
 
-    # Aplica filtro por nombre de manera insensible a mayúsculas
     if filtros["nombre"]:
         categorias_qs = categorias_qs.filter(nombre__icontains=filtros["nombre"])
 
@@ -21,7 +20,7 @@ def categorias(request):
         "hay_filtro": bool(filtros["nombre"]),
         "total_filtrado": categorias_qs.count(),
         "total_general": Categoria.objects.count(),
-        "request": request,  # para reutilizar la ruta en el template
+        "request": request, 
     }
 
     return render(request, 'categorias.html', contexto)
