@@ -3,15 +3,8 @@ from django.shortcuts import render
 
 from .models import Categoria
 
-
-def index(request):
-    return HttpResponse("Hola mundo")
-
-def contact(request, name):
-    return HttpResponse(f"Hola {name} bienvenido a la clase de Django")
-
 def categorias(request):
-    # Captura de query params (ej.: ?nombre=PALABRA_FILTRAR)
+    
     filtros = {
         "nombre": (request.GET.get('nombre') or "").strip()
     }
