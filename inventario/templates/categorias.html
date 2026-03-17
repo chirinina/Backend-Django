@@ -149,15 +149,15 @@
       </header>
 
       <form method="get">
-        <label for="buscar-nombre">Buscar por nombre</label>
+        <label for="buscar-nombre">Buscar por nombre de requerido</label>
         <input
           id="buscar-nombre"
           type="text"
           name="nombre"
           value="{{ filtros.nombre }}"
-          placeholder="Ej. Alimentos, Tecnología..."
+          placeholder="Ej. Diseño"
         />
-        <button type="submit">Filtrar</button>
+        <button type="submit">Aplicar Filtro</button>
         {% if hay_filtro %}
         <button
           type="button"
@@ -192,7 +192,7 @@
       </section>
       {% else %}
       <div class="empty">
-        No se encontraron categorías con el filtro aplicado.
+        No hay filtros relacionados.
       </div>
       {% endif %}
     </main>
